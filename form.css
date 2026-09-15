@@ -1,0 +1,47 @@
+.registration-form {
+background-color:white;
+padding:25px;
+}
+
+.registration-form fieldset {
+border:2px solid #558B2F;
+padding:20px;
+border-radius:10px;
+}
+
+.registration-form legend {
+color:#286D2F;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="tel"],
+.registration-form input[type="email"],
+.registration-form input[type="date"],
+.registration-form input[type="file"],
+.registration-form select {
+width:90%;
+padding:10px;
+margin-top:5px;
+border:1px solid #999;
+border-radius:5px;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+border:2px solid #558B2F;
+}
+
+.registration-form input[type="submit"],
+.registration-form input[type="reset"] {
+background-color:#558B2F;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+margin-right:8px;
+}
+
+.registration-form input[type="submit"]:hover,
+.registration-form input[type="reset"]:hover {
+background-color:#2E7D32;
+}

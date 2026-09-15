@@ -1,0 +1,40 @@
+.page-layout {
+width:90%;
+margin:auto;
+display:flex;
+gap:25px;
+align-items:flex-start;
+}
+
+.farm-info {
+width:22%;
+float:none;
+box-sizing:border-box;
+flex-shrink:0;
+}
+
+.main-content {
+width:78%;
+margin-left:0;
+}
+
+.main-image {
+width:100%;
+height:300px;
+}
+
+.gallery-section {
+width:90%;
+margin:auto;
+text-align:center;
+padding-top:20px;
+clear:both;
+}
+
+footer {
+clear:both;
+background-color:#2E7D32;
+color:white;
+text-align:center;
+padding:12px;
+}

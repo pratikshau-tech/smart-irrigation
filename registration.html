@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>registration</title>
+
+<link rel="stylesheet" href="form.css">
+
+<style>
+
+nav ul {
+list-style-type:none;
+margin:0;
+padding:0;
+}
+
+nav li {
+display:inline-block;
+}
+
+nav a {
+color:white;
+text-decoration:none;
+padding:10px;
+margin:0 5px;
+}
+
+nav a:hover {
+background-color:#2E7D32;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body style="background-color:#EAF5E5; margin:0;">
+
+<header style="background-color:#286D2F; color:white; text-align:center; padding:30px; border:3px solid #17451F;">
+
+<h1 style="font-size:42px; color:white; padding:5px;">
+SMART IRRIGATION SYSTEM
+</h1>
+
+<p style="font-size:18px; color:white; text-align:center; padding:5px;">
+<b>Smart Irrigation using AI & Sensor Technology</b>
+</p>
+
+</header>
+
+
+<nav style="background-color:#558B2F; text-align:center; padding:15px;">
+
+<ul>
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="farm-info.html">Farm Dashboard</a>
+</li>
+
+<li>
+<a href="advisory.html">Irrigation Advisory</a>
+</li>
+
+<li>
+<a href="gallery.html">Farm Gallery</a>
+</li>
+
+<li>
+<a href="plot-map.html">Plot Map</a>
+</li>
+
+<li>
+<a href="irrigation-table.html">Sensor Data</a>
+</li>
+
+<li>
+<a href="registration.html">Registration</a>
+</li>
+
+<li>
+<a href="weather.html">Weather</a>
+</li>
+
+<li>
+<a href="media.html">Media</a>
+</li>
+
+<li>
+<a href="contact.html">Contact</a>
+</li>
+
+</ul>
+
+</nav>
+
+
+<section style="width:90%; margin:auto;">
+
+<h2 style="color:#286D2F; text-align:center;">
+Farmer Registration
+</h2>
+
+
+<form class="registration-form">
+
+<fieldset>
+
+<legend><b>Farmer Information</b></legend>
+
+<label>Farmer Name:</label><br>
+
+<input type="text" name="farmername" placeholder="Enter farmer name" required autofocus>
+
+<br><br>
+
+<label>Mobile Number:</label><br>
+
+<input type="tel" name="mobile" placeholder="10 digit mobile number"
+pattern="[0-9]{10}" required>
+
+<br><br>
+
+<label>Email:</label><br>
+
+<input type="email" name="email" placeholder="Enter email" required>
+
+<br><br>
+
+<label>Plot ID:</label><br>
+
+<input type="text" name="plotid" placeholder="Enter plot ID" required>
+
+<br><br>
+
+<label>Village:</label><br>
+
+<input type="text" name="village" placeholder="Enter village name" required>
+
+</fieldset>
+
+
+<br>
+
+
+<fieldset>
+
+<legend><b>Farm Information</b></legend>
+
+<label>Crop Stage:</label><br>
+
+<select name="cropstage" required>
+
+<option value="">Select Crop Stage</option>
+
+<option>Germination</option>
+
+<option>Tillering</option>
+
+<option>Grand Growth</option>
+
+<option>Maturity</option>
+
+</select>
+
+<br><br>
+
+<label>Soil Type:</label><br>
+
+<select name="soiltype" required>
+
+<option value="">Select Soil Type</option>
+
+<option>Black Soil</option>
+
+<option>Red Soil</option>
+
+<option>Alluvial Soil</option>
+
+<option>Sandy Soil</option>
+
+</select>
+
+<br><br>
+
+<label>Irrigation Method:</label><br>
+
+<input type="radio" name="irrigation" value="Drip" required>
+Drip
+
+<input type="radio" name="irrigation" value="Sprinkler">
+Sprinkler
+
+<input type="radio" name="irrigation" value="Other">
+Other
+
+<br><br>
+
+<label>Registration Date:</label><br>
+
+<input type="date" name="date" required>
+
+<br><br>
+
+<label>Farm Photo:</label><br>
+
+<input type="file" name="photo" accept="image/*">
+
+<br><br>
+
+<input type="submit" value="Register">
+
+<input type="reset" value="Reset">
+
+</fieldset>
+
+</form>
+
+
+<article style="background-color:#D8ECD5; padding:20px; margin-top:20px;">
+
+<h2 style="color:#286D2F;">
+Registration Information
+</h2>
+
+<p>
+The registration form collects basic farmer and farm information.
+This information can be used for providing plot-specific irrigation
+advisories.
+</p>
+
+</article>
+
+</section>
+
+
+<footer style="background-color:#2E7D32; color:white; text-align:center; padding:12px; clear:both;">
+
+<p>Copyright 2026 Smart Irrigation Advisory System</p>
+
+</footer>
+
+
+</body>
+</html>

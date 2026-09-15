@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Plot Map</title>
+</head>
+
+<body style="background-color:#EAF5E5;">
+
+<header style="background-color:#286D2F; color:white; text-align:center; padding:30px;">
+
+<h1 style="font-size:42px;">SMART IRRIGATION SYSTEM</h1>
+
+<p style="font-size:18px;"><b>Smart Irrigation using AI & Sensor Technology</b></p>
+
+</header>
+
+
+<nav style="background-color:#558B2F; text-align:center; padding:15px;">
+
+<a href="index.html" style="color:white; margin:0 8px;">Home</a>
+
+<a href="farm-info.html" style="color:white; margin:0 8px;">Farm Dashboard</a>
+
+<a href="advisory.html" style="color:white; margin:0 8px;">Irrigation Advisory</a>
+
+<a href="gallery.html" style="color:white; margin:0 8px;">Farm Gallery</a>
+
+<a href="plot-map.html" style="color:white; margin:0 8px;">Plot Map</a>
+
+<a href="irrigation-table.html" style="color:white; margin:0 8px;">Sensor Data</a>
+
+<a href="registration.html" style="color:white; margin:0 8px;">Registration</a>
+
+<a href="weather.html" style="color:white; margin:0 8px;">Weather</a>
+
+<a href="media.html" style="color:white; margin:0 8px;">Media</a>
+
+<a href="contact.html" style="color:white; margin:0 8px;">Contact</a>
+
+</nav>
+
+
+<section style="width:90%; margin:auto; text-align:center;">
+
+<h2 style="color:#286D2F;">Farm Plot Map</h2>
+
+<p>Click on Plot A, Plot B or Plot C to view plot details.</p>
+
+
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Precision_Farming_in_Minnesota_-_Natural_Colour.jpg?width=600"
+alt="Farm Plot Map"
+width="600"
+height="400"
+border="3"
+usemap="#farmplots">
+
+
+<map name="farmplots">
+
+<area shape="rect"
+coords="0,0,200,400"
+href="plot-a-details.html"
+target="plotframe"
+alt="Plot A"
+title="Plot A">
+
+<area shape="rect"
+coords="200,0,400,400"
+href="plot-b-details.html"
+target="plotframe"
+alt="Plot B"
+title="Plot B">
+
+<area shape="rect"
+coords="400,0,600,400"
+href="plot-c-details.html"
+target="plotframe"
+alt="Plot C"
+title="Plot C">
+
+</map>
+
+
+<h3 style="color:#286D2F;">Selected Plot Details</h3>
+
+<iframe name="plotframe"
+src="plot-a-details.html"
+width="90%"
+height="150"
+frameborder="0">
+</iframe>
+
+</section>
+
+
+<footer style="background-color:#2E7D32; color:white; text-align:center; padding:12px;">
+
+<p>Copyright 2026 Smart Irrigation Advisory System</p>
+
+</footer>
+
+</body>
+
+</html>
