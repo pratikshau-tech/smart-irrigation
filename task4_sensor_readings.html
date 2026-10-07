@@ -1,0 +1,100 @@
+
+<html>
+<head>
+    <title>Task 4 - Soil Moisture Sensor Readings</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .box {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-left: 5px solid #2e7d32;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<script>
+
+var readings = [25, 40, 35, 55, 28, 45];
+var criticalValue = 30;
+
+var minimum = readings[0];
+var maximum = readings[0];
+var total = 0;
+var belowCritical = 0;
+
+document.write("<h1>Soil Moisture Sensor Readings</h1>");
+
+document.write("<p>");
+document.write("Sensor Readings: ");
+
+for (var i = 0; i < readings.length; i++)
+{
+    document.write(readings[i] + "% ");
+
+    total = total + readings[i];
+
+    if (readings[i] < minimum)
+    {
+        minimum = readings[i];
+    }
+
+    if (readings[i] > maximum)
+    {
+        maximum = readings[i];
+    }
+
+    if (readings[i] < criticalValue)
+    {
+        belowCritical++;
+    }
+}
+
+var average = total / readings.length;
+
+document.write("</p>");
+
+document.write("<div class='result'>");
+document.write("Minimum Reading: " + minimum + "%<br>");
+document.write("Maximum Reading: " + maximum + "%<br>");
+document.write("Average Reading: " + average + "%<br>");
+document.write("Readings Below Critical Value: " + belowCritical);
+document.write("</div>");
+
+</script>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+
+<html>
+<head>
+    <title>Task 6 - Farmer Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .box {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        label {
+            font-size: 17px;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 10px;
+            margin-top: 7px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            border: none;
+        }
+
+        #submitBtn {
+            background-color: #2e7d32;
+            color: white;
+        }
+
+        #resetBtn {
+            background-color: #ddd;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            display: block;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        #success {
+            color: green;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Farmer Registration</h1>
+
+<form id="farmerForm">
+
+    <label>Farmer Name:</label>
+    <input type="text" id="farmerName">
+    <span class="error" id="nameError"></span>
+
+    <label>Mobile Number:</label>
+    <input type="text" id="mobile">
+    <span class="error" id="mobileError"></span>
+
+    <label>Plot ID:</label>
+    <input type="text" id="plotId">
+    <span class="error" id="plotError"></span>
+
+    <label>Soil Moisture (%):</label>
+    <input type="number" id="soilMoisture">
+    <span class="error" id="moistureError"></span>
+
+    <label>Crop Stage:</label>
+    <select id="cropStage">
+        <option value="">Select Crop Stage</option>
+        <option value="Germination">Germination</option>
+        <option value="Growing">Growing</option>
+        <option value="Maturity">Maturity</option>
+    </select>
+    <span class="error" id="stageError"></span>
+
+    <label>Irrigation Date:</label>
+    <input type="date" id="irrigationDate">
+    <span class="error" id="dateError"></span>
+
+    <button type="submit" id="submitBtn">Register</button>
+    <button type="reset" id="resetBtn">Reset</button>
+
+</form>
+
+<div id="success"></div>
+
+<script>
+
+function validateName()
+{
+    var name = document.getElementById("farmerName").value;
+    var pattern = /^[A-Za-z ]+$/;
+
+    if (name == "")
+    {
+        document.getElementById("nameError").innerHTML = "Farmer Name is required";
+        return false;
+    }
+    else if (!pattern.test(name))
+    {
+        document.getElementById("nameError").innerHTML = "Enter a valid Farmer Name";
+        return false;
+    }
+    else
+    {
+        document.getElementById("nameError").innerHTML = "";
+        return true;
+    }
+}
+
+function validateMobile()
+{
+    var mobile = document.getElementById("mobile").value;
+    var pattern = /^[0-9]{10}$/;
+
+    if (mobile == "")
+    {
+        document.getElementById("mobileError").innerHTML = "Mobile Number is required";
+        return false;
+    }
+    else if (!pattern.test(mobile))
+    {
+        document.getElementById("mobileError").innerHTML = "Enter a valid 10-digit mobile number";
+        return false;
+    }
+    else
+    {
+        document.getElementById("mobileError").innerHTML = "";
+        return true;
+    }
+}
+
+function validatePlot()
+{
+    var plotId = document.getElementById("plotId").value;
+    var pattern = /^AGR-[0-9]{4}$/;
+
+    if (plotId == "")
+    {
+        document.getElementById("plotError").innerHTML = "Plot ID is required";
+        return false;
+    }
+    else if (!pattern.test(plotId))
+    {
+        document.getElementById("plotError").innerHTML = "Plot ID must be like AGR-1234";
+        return false;
+    }
+    else
+    {
+        document.getElementById("plotError").innerHTML = "";
+        return true;
+    }
+}
+
+function validateMoisture()
+{
+    var moisture = document.getElementById("soilMoisture").value;
+
+    if (moisture == "")
+    {
+        document.getElementById("moistureError").innerHTML = "Soil Moisture is required";
+        return false;
+    }
+    else if (moisture < 0 || moisture > 100)
+    {
+        document.getElementById("moistureError").innerHTML = "Soil Moisture must be between 0 and 100";
+        return false;
+    }
+    else
+    {
+        document.getElementById("moistureError").innerHTML = "";
+        return true;
+    }
+}
+
+function validateStage()
+{
+    var stage = document.getElementById("cropStage").value;
+
+    if (stage == "")
+    {
+        document.getElementById("stageError").innerHTML = "Please select Crop Stage";
+        return false;
+    }
+    else
+    {
+        document.getElementById("stageError").innerHTML = "";
+        return true;
+    }
+}
+
+function validateDate()
+{
+    var date = document.getElementById("irrigationDate").value;
+
+    if (date == "")
+    {
+        document.getElementById("dateError").innerHTML = "Irrigation Date is required";
+        return false;
+    }
+    else
+    {
+        document.getElementById("dateError").innerHTML = "";
+        return true;
+    }
+}
+
+document.getElementById("farmerForm").addEventListener("submit", function(event)
+{
+    event.preventDefault();
+
+    var nameValid = validateName();
+    var mobileValid = validateMobile();
+    var plotValid = validatePlot();
+    var moistureValid = validateMoisture();
+    var stageValid = validateStage();
+    var dateValid = validateDate();
+
+    if (nameValid && mobileValid && plotValid && moistureValid && stageValid && dateValid)
+    {
+        document.getElementById("success").innerHTML = "Farmer registration successful!";
+    }
+    else
+    {
+        document.getElementById("success").innerHTML = "";
+    }
+});
+
+</script>
+
+</div>
+
+</body>
+</html>
+

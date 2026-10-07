@@ -1,0 +1,128 @@
+
+<html>
+<head>
+    <title>Task 1 - Soil Moisture</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .box {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .status {
+            padding: 15px;
+            background-color: #fff3cd;
+            border-left: 5px solid #e0a800;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<script>
+
+var farmerName = "Rahul";
+var plotId = "AGR-1001";
+var currentMoisture = 25;
+var requiredMoisture = 50;
+
+var moistureDeficit = requiredMoisture - currentMoisture;
+
+var irrigationStatus;
+
+if (moistureDeficit > 0)
+{
+    irrigationStatus = "Irrigation Required";
+}
+else
+{
+    irrigationStatus = "Irrigation Not Required";
+}
+
+alert(irrigationStatus);
+
+document.write("<h1>Smart Irrigation Advisory</h1>");
+
+document.write("<p>");
+document.write("Farmer Name: " + farmerName + "<br>");
+document.write("Plot ID: " + plotId + "<br>");
+document.write("Current Soil Moisture: " + currentMoisture + "%<br>");
+document.write("Required Soil Moisture: " + requiredMoisture + "%<br>");
+document.write("Moisture Deficit: " + moistureDeficit + "%");
+document.write("</p>");
+
+document.write("<div class='status'>");
+document.write("Irrigation Status: " + irrigationStatus);
+document.write("</div>");
+
+</script>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+
+<html>
+<head>
+    <title>Task 5 - Input Validation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .box {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Farmer Input Validation</h1>
+
+<label>Farmer Name:</label>
+<input type="text" id="farmerName">
+
+<label>Mobile Number:</label>
+<input type="text" id="mobile">
+
+<label>Plot ID:</label>
+<input type="text" id="plotId">
+
+<button onclick="validateData()">Validate</button>
+
+<div id="result"></div>
+
+<script>
+
+function validateData()
+{
+    var farmerName = document.getElementById("farmerName").value;
+    var mobile = document.getElementById("mobile").value;
+    var plotId = document.getElementById("plotId").value;
+
+    var namePattern = /^[A-Za-z ]+$/;
+    var mobilePattern = /^[0-9]{10}$/;
+    var plotPattern = /^AGR-[0-9]{4}$/;
+
+    if (!namePattern.test(farmerName))
+    {
+        document.getElementById("result").innerHTML = "Invalid Farmer Name";
+    }
+    else if (!mobilePattern.test(mobile))
+    {
+        document.getElementById("result").innerHTML = "Invalid Mobile Number";
+    }
+    else if (!plotPattern.test(plotId))
+    {
+        document.getElementById("result").innerHTML = "Invalid Plot ID";
+    }
+    else
+    {
+        document.getElementById("result").innerHTML = "All inputs are valid";
+    }
+}
+
+</script>
+
+</div>
+
+</body>
+</html>
+

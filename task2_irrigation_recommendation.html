@@ -1,0 +1,91 @@
+
+<html>
+<head>
+    <title>Task 2 - Irrigation Recommendation</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .box {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .result {
+            padding: 15px;
+            background-color: #fff3cd;
+            border-left: 5px solid #e0a800;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<script>
+
+var soilMoisture = 25;
+var rainfall = "No Rain";
+var cropStage = "Growing";
+
+var recommendation;
+
+if (rainfall == "Rain Expected")
+{
+    recommendation = "Postpone Irrigation";
+}
+else if (soilMoisture < 30)
+{
+    recommendation = "Irrigation Required Immediately";
+}
+else if (soilMoisture >= 30 && soilMoisture <= 50)
+{
+    recommendation = "Monitor Soil Moisture";
+}
+else
+{
+    recommendation = "Irrigation Not Required";
+}
+
+alert(recommendation);
+
+document.write("<h1>Smart Irrigation Advisory</h1>");
+
+document.write("<p>");
+document.write("Soil Moisture: " + soilMoisture + "%<br>");
+document.write("Rainfall Forecast: " + rainfall + "<br>");
+document.write("Crop Stage: " + cropStage);
+document.write("</p>");
+
+document.write("<div class='result'>");
+document.write("Recommendation: " + recommendation);
+document.write("</div>");
+
+</script>
+
+</div>
+
+</body>
+</html>

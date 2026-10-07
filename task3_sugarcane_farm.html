@@ -1,0 +1,70 @@
+
+<html>
+<head>
+    <title>Task 3 - Sugarcane Farm</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f8f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .box {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<script>
+
+var farm = {
+    farmerName: "Rahul",
+    plotId: "AGR-1001",
+    cropStage: "Growing",
+    soilMoisture: 45,
+    area: "2 Acres",
+    pumpStatus: "ON",
+
+    displayFarm: function()
+    {
+        document.write("<h1>Sugarcane Farm Information</h1>");
+        document.write("<p>");
+        document.write("Farmer Name: " + this.farmerName + "<br>");
+        document.write("Plot ID: " + this.plotId + "<br>");
+        document.write("Crop Stage: " + this.cropStage + "<br>");
+        document.write("Soil Moisture: " + this.soilMoisture + "%<br>");
+        document.write("Area: " + this.area + "<br>");
+        document.write("Pump Status: " + this.pumpStatus);
+        document.write("</p>");
+    }
+};
+
+farm.displayFarm();
+
+</script>
+
+</div>
+
+</body>
+</html>

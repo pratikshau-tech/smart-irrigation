@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+
 <html>
 
 <head>
 
-<title>registration</title>
+<title>Farmer Registration</title>
 
 <link rel="stylesheet" href="form.css">
 
@@ -31,6 +31,21 @@ background-color:#2E7D32;
 color:white;
 }
 
+.error {
+color:red;
+font-size:14px;
+}
+
+.invalid {
+border:2px solid red;
+}
+
+.success {
+color:green;
+font-size:18px;
+font-weight:bold;
+}
+
 </style>
 
 </head>
@@ -44,7 +59,7 @@ SMART IRRIGATION SYSTEM
 </h1>
 
 <p style="font-size:18px; color:white; text-align:center; padding:5px;">
-<b>Smart Irrigation using AI & Sensor Technology</b>
+<b>Farmer Registration and Irrigation Advisory</b>
 </p>
 
 </header>
@@ -54,45 +69,25 @@ SMART IRRIGATION SYSTEM
 
 <ul>
 
-<li>
-<a href="index.html">Home</a>
-</li>
+<li><a href="index.html">Home</a></li>
 
-<li>
-<a href="farm-info.html">Farm Dashboard</a>
-</li>
+<li><a href="farm-info.html">Farm Dashboard</a></li>
 
-<li>
-<a href="advisory.html">Irrigation Advisory</a>
-</li>
+<li><a href="advisory.html">Irrigation Advisory</a></li>
 
-<li>
-<a href="gallery.html">Farm Gallery</a>
-</li>
+<li><a href="gallery.html">Farm Gallery</a></li>
 
-<li>
-<a href="plot-map.html">Plot Map</a>
-</li>
+<li><a href="plot-map.html">Plot Map</a></li>
 
-<li>
-<a href="irrigation-table.html">Sensor Data</a>
-</li>
+<li><a href="irrigation-table.html">Sensor Data</a></li>
 
-<li>
-<a href="registration.html">Registration</a>
-</li>
+<li><a href="registration.html">Registration</a></li>
 
-<li>
-<a href="weather.html">Weather</a>
-</li>
+<li><a href="weather.html">Weather</a></li>
 
-<li>
-<a href="media.html">Media</a>
-</li>
+<li><a href="media.html">Media</a></li>
 
-<li>
-<a href="contact.html">Contact</a>
-</li>
+<li><a href="contact.html">Contact</a></li>
 
 </ul>
 
@@ -105,41 +100,58 @@ SMART IRRIGATION SYSTEM
 Farmer Registration
 </h2>
 
+<p style="text-align:center;">
+Enter the farmer and farm details below.
+</p>
 
-<form class="registration-form">
+
+<form class="registration-form" id="farmerForm" novalidate>
 
 <fieldset>
 
 <legend><b>Farmer Information</b></legend>
 
-<label>Farmer Name:</label><br>
+<label for="farmername">Farmer Name:</label><br>
 
-<input type="text" name="farmername" placeholder="Enter farmer name" required autofocus>
+<input type="text" id="farmername" name="farmername" placeholder="Enter farmer name" required>
 
-<br><br>
-
-<label>Mobile Number:</label><br>
-
-<input type="tel" name="mobile" placeholder="10 digit mobile number"
-pattern="[0-9]{10}" required>
+<span id="nameError" class="error"></span>
 
 <br><br>
 
-<label>Email:</label><br>
 
-<input type="email" name="email" placeholder="Enter email" required>
+<label for="mobile">Mobile Number:</label><br>
 
-<br><br>
+<input type="tel" id="mobile" name="mobile" placeholder="10 digit mobile number" required>
 
-<label>Plot ID:</label><br>
-
-<input type="text" name="plotid" placeholder="Enter plot ID" required>
+<span id="mobileError" class="error"></span>
 
 <br><br>
 
-<label>Village:</label><br>
 
-<input type="text" name="village" placeholder="Enter village name" required>
+<label for="email">Email:</label><br>
+
+<input type="email" id="email" name="email" placeholder="Enter email" required>
+
+<span id="emailError" class="error"></span>
+
+<br><br>
+
+
+<label for="plotid">Plot ID:</label><br>
+
+<input type="text" id="plotid" name="plotid" placeholder="Enter plot ID" required>
+
+<span id="plotError" class="error"></span>
+
+<br><br>
+
+
+<label for="village">Village:</label><br>
+
+<input type="text" id="village" name="village" placeholder="Enter village name" required>
+
+<span id="villageError" class="error"></span>
 
 </fieldset>
 
@@ -151,9 +163,10 @@ pattern="[0-9]{10}" required>
 
 <legend><b>Farm Information</b></legend>
 
-<label>Crop Stage:</label><br>
 
-<select name="cropstage" required>
+<label for="cropstage">Crop Stage:</label><br>
+
+<select id="cropstage" name="cropstage" required>
 
 <option value="">Select Crop Stage</option>
 
@@ -167,11 +180,14 @@ pattern="[0-9]{10}" required>
 
 </select>
 
+<span id="cropError" class="error"></span>
+
 <br><br>
 
-<label>Soil Type:</label><br>
 
-<select name="soiltype" required>
+<label for="soiltype">Soil Type:</label><br>
+
+<select id="soiltype" name="soiltype" required>
 
 <option value="">Select Soil Type</option>
 
@@ -185,36 +201,55 @@ pattern="[0-9]{10}" required>
 
 </select>
 
+<span id="soilError" class="error"></span>
+
 <br><br>
+
 
 <label>Irrigation Method:</label><br>
 
-<input type="radio" name="irrigation" value="Drip" required>
-Drip
+<input type="radio" id="drip" name="irrigation" value="Drip" required>
+<label for="drip">Drip</label>
 
-<input type="radio" name="irrigation" value="Sprinkler">
-Sprinkler
+<input type="radio" id="sprinkler" name="irrigation" value="Sprinkler">
+<label for="sprinkler">Sprinkler</label>
 
-<input type="radio" name="irrigation" value="Other">
-Other
+<input type="radio" id="other" name="irrigation" value="Other">
+<label for="other">Other</label>
 
-<br><br>
-
-<label>Registration Date:</label><br>
-
-<input type="date" name="date" required>
+<span id="irrigationError" class="error"></span>
 
 <br><br>
 
-<label>Farm Photo:</label><br>
 
-<input type="file" name="photo" accept="image/*">
+<label for="soilmoisture">Soil Moisture (%):</label><br>
+
+<input type="number" id="soilmoisture" name="soilmoisture" placeholder="Enter soil moisture percentage" required>
 
 <br><br>
+
+
+<label for="date">Registration Date:</label><br>
+
+<input type="date" id="date" name="date" required>
+
+<span id="dateError" class="error"></span>
+
+<br><br>
+
+
+<label for="photo">Farm Photo:</label><br>
+
+<input type="file" id="photo" name="photo" accept="image/*">
+
+<br><br>
+
 
 <input type="submit" value="Register">
 
 <input type="reset" value="Reset">
+
+<p id="successMessage" class="success"></p>
 
 </fieldset>
 
@@ -228,7 +263,8 @@ Registration Information
 </h2>
 
 <p>
-The registration form collects basic farmer and farm information.
+The registration form collects farmer and farm information such as
+soil type, crop stage, irrigation method and soil moisture.
 This information can be used for providing plot-specific irrigation
 advisories.
 </p>
@@ -243,6 +279,121 @@ advisories.
 <p>Copyright 2026 Smart Irrigation Advisory System</p>
 
 </footer>
+
+
+<script>
+
+let today = new Date();
+let year = today.getFullYear();
+let month = String(today.getMonth() + 1).padStart(2, "0");
+let day = String(today.getDate()).padStart(2, "0");
+
+document.getElementById("date").max = year + "-" + month + "-" + day;
+
+
+document.getElementById("farmerForm").addEventListener("submit", function(event) {
+
+event.preventDefault();
+
+let name = document.getElementById("farmername").value.trim();
+let mobile = document.getElementById("mobile").value.trim();
+let email = document.getElementById("email").value.trim();
+let plot = document.getElementById("plotid").value.trim();
+let village = document.getElementById("village").value.trim();
+
+let crop = document.getElementById("cropstage").value;
+let soil = document.getElementById("soiltype").value;
+let date = document.getElementById("date").value;
+
+let irrigation = document.querySelector('input[name="irrigation"]:checked');
+
+document.getElementById("farmername").value = name;
+document.getElementById("mobile").value = mobile;
+document.getElementById("email").value = email;
+document.getElementById("plotid").value = plot;
+document.getElementById("village").value = village;
+
+document.getElementById("nameError").innerHTML = "";
+document.getElementById("mobileError").innerHTML = "";
+document.getElementById("emailError").innerHTML = "";
+document.getElementById("plotError").innerHTML = "";
+document.getElementById("villageError").innerHTML = "";
+document.getElementById("cropError").innerHTML = "";
+document.getElementById("soilError").innerHTML = "";
+document.getElementById("irrigationError").innerHTML = "";
+document.getElementById("dateError").innerHTML = "";
+document.getElementById("successMessage").innerHTML = "";
+
+document.getElementById("cropstage").classList.remove("invalid");
+document.getElementById("soiltype").classList.remove("invalid");
+document.getElementById("date").classList.remove("invalid");
+
+let valid = true;
+
+if (name == "") {
+document.getElementById("nameError").innerHTML = " Please enter farmer name";
+valid = false;
+}
+else if (!/^[A-Za-z ]+$/.test(name)) {
+document.getElementById("nameError").innerHTML = " Name should contain only alphabets and spaces";
+valid = false;
+}
+
+if (plot == "") {
+document.getElementById("plotError").innerHTML = " Please enter plot ID";
+valid = false;
+}
+
+if (village == "") {
+document.getElementById("villageError").innerHTML = " Please enter village name";
+valid = false;
+}
+
+if (!/^[6-9][0-9]{9}$/.test(mobile)) {
+document.getElementById("mobileError").innerHTML = " Please enter a valid 10-digit mobile number";
+valid = false;
+}
+
+if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+document.getElementById("emailError").innerHTML = " Please enter a valid email address";
+valid = false;
+}
+
+if (crop == "") {
+document.getElementById("cropError").innerHTML = " Please select crop stage";
+document.getElementById("cropstage").classList.add("invalid");
+valid = false;
+}
+
+if (soil == "") {
+document.getElementById("soilError").innerHTML = " Please select soil type";
+document.getElementById("soiltype").classList.add("invalid");
+valid = false;
+}
+
+if (irrigation == null) {
+document.getElementById("irrigationError").innerHTML = " Please select irrigation method";
+valid = false;
+}
+
+if (date == "") {
+document.getElementById("dateError").innerHTML = " Please enter registration date";
+document.getElementById("date").classList.add("invalid");
+valid = false;
+}
+else if (date > year + "-" + month + "-" + day) {
+document.getElementById("dateError").innerHTML = " Registration date cannot be a future date";
+document.getElementById("date").classList.add("invalid");
+valid = false;
+}
+
+if (valid) {
+document.getElementById("successMessage").innerHTML = "Registration successful!";
+}
+
+});
+
+</script>
 
 
 </body>
